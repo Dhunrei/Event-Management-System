@@ -31,7 +31,7 @@ else{
     else {
     
         $checkuser = mysqli_query("SELECT username FROM tbllregister WHERE username='$username'");
-        $usercheck = mysqli_fetch_assoc($checkuser);
+        $usercheck = mysqli_fetch_assoc($checkuser) or die .mysql_error();
         if($_POST['username'] == $usercheck['username']){
         echo "Invalid Username";
         }
