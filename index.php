@@ -33,7 +33,9 @@ session_start();
     
      
     </div>  
-     <div id="footer"></div>
+    <div id="footer">
+        <p>Add some info on footer</p>
+    </div>
     </div>
 </body>   
 </html>    
