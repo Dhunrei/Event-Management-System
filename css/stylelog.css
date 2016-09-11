@@ -1,0 +1,157 @@
+body{
+    margin:0;
+    
+}
+#container{
+    width:1366px;
+    height:768px; 
+}
+#header{
+    width:1366px;
+    height:100px;
+    border-radius:5px; 
+}
+
+a{ 
+	text-decoration: none;
+	
+ }
+a:link, a:visited {
+	color:#CF5C3F
+}
+a:hover, a:active{
+
+	color:#FFF;
+} 
+
+.menuheader nav{ /*for background hover color and height and width*/
+	background-color: 	#282828 ;
+    height: 100px;
+    border-radius:5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;	/*moz if for mozilla   */
+	-webkit-border-radius: 5px 5px 0 0; /* are visible in browserb base on webkit */
+}
+
+.menuheadernav ul {
+	list-style:none;
+	margin: 0 auto;
+}
+
+.menuheader nav ul li{  /*para sa line ng menu */ 
+	margin-top: 30px;
+    margin-left: 100px;
+    float:left;
+	display:inline;
+}
+
+.menuheader nav a:link, .menuheader nav a:visited { /* if their visit have a same style */
+	color:#FFF;
+	display: inline-block;
+	padding: 10px 25px; /* bottom and top */
+	height:20px;
+}
+
+.menuheader nav a:hover, .menuheader nav a:active,
+.menuheader nav .active a:link, .menuheader nav .active a:visited{ /*para sa hoverbackgroud */
+	color:#CF5C3F;
+	text-shadow: none;
+}
+
+.menu nav ul li a{
+	border-radius:5px;
+	-moz-border-radius: 5px;	/*moz if for mozilla   */
+	-webkit-border-radius: 5px; /* are visible in browserb base on webkit */
+}
+
+#content{
+    width: 1366px;
+    height: 630px;
+    background-color: white;
+}
+#footer{
+    width: 1366px;
+    height: 50px;
+    background-color: 	#282828 ;   
+}
+
+h3 {
+   margin-top: 50px;
+    
+   }
+
+input[type="submit"] { cursor: pointer; }
+
+.login-form {
+	width: 500px;
+}
+
+.login-form h3 { /* para sa h3*/
+	background-color: #282830;
+	border-radius: 5px 5px 0 0;
+	color: #fff;
+	font-size: 20px;
+	padding: 40px;
+	text-align: center;
+	text-transform: uppercase;
+    margin-left:400px;
+    width:500px;
+}
+
+.login-form fieldset {
+	background: #fff;
+	border-radius: 0 0 10px 10px    ;   
+	padding: 40px;
+	position: relative;
+    margin-left:400px;
+    width:500px;
+}
+
+.login-form input {
+	font-size: 15px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+	border: 1px solid #dcdcdc;
+	padding: 12px 10px;
+	width: 80%;
+}
+
+.login-form input[type="text"] {
+	border-radius: 3px 3px 0 0;
+}
+
+.login-form input[type="password"] {
+	border-top: none;
+	border-radius: 0px 0px 3px 3px;
+}
+
+.login-form input[type="submit"] {
+	background: #1dabb8;
+	border-radius: 3px;
+	color: #fff;
+	float: left;
+	font-weight: bold;
+	margin-top: 20px;
+	padding: 12px 20px;
+    width:100px;
+}
+
+.login-form input[type="submit"]:hover { background: #198d98; }
+
+.reg {  /* element used to color a part of a text:*/
+	
+
+	line-height: 50px;
+	margin-left: 10px;
+    margin-right: 10px;
+}
+
+a { 
+	color: #999;
+	text-decoration: none;
+}
+
+a:hover { color: #1dabb8; }
+
+
