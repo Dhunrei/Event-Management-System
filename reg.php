@@ -11,6 +11,7 @@
 session_start();
 
 include 'dbcon.php';
+
 $name = $_POST['name'];
 $email = $_POST['email'];
 $username = $_POST['username'];
@@ -35,20 +36,20 @@ else{
         echo "Invalid Username";
         }
         else{
-            if(empty($password = $_POST['password'])){
+            if(empty($password)){
                 echo "Insert password";
             }
-             if(empty($repassword = $_POST['repassword'])){
+             if(empty($repassword)){
                 echo "Insert password";
             }
             
             if(!$password == $repassword){
                 echo "Password did not match!";
             }else{
-                if(empty($gender = $_POST['gender'])){
+                if(empty($gender)){
                     echo "Select Gender";
                 }else{
-                    if(empty($mobileno = $_POST['phone'])){
+                    if(empty($mobileno)){
                         echo "Insert Mobile No.";
                     }else{
 
