@@ -19,16 +19,10 @@ session_start();
           <li><a href="login.php">Login</a></li>
 		</ul></nav>
       </div>
+      
     
       <div id="content">    
-        <?php
-        if(isset($_SESSION['ID'])){
-            echo $_SESSION['ID'];
-        }  else{
-            echo "You are not Logged in!";
-        }
-        ?>
-    
+      
    
     
      

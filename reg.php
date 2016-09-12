@@ -10,37 +10,50 @@
 <?php
 session_start();
 
-include 'dbcon.php';
+require 'dbcon.php';
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$username = $_POST['username'];
-$password = $_POST['password'];
-$repassword = $_POST['repassword'];
-$gender = $_POST['gender'];
-$mobileno = $_POST['phone'];
-if(!$password == $repassword){
-    header("Location: registration.php"); 
-}else{
-$checkemail = mysqli_query("SELECT username FROM tbllregister WHERE email='$email'");
-    if(mysqli_num_rows($checkemail) > 0){
-        header("Location: registration.php"); 
-    }else{
-        
+$name=$_POST['nm'];
+$email=$_POST['el'];
+$username=$_POST['un'];
+$password= $_POST['ps'];
+$repassword=$_POST['rp'];
+$gender=$_POST['gr'];
+$mobilen=$_POST['mb'];
+
+if($password != $repassword){
+  echo 'Your Password is not the same';  
+}
+else{
+//$checkemail = mysqli_query("SELECT username FROM tblcustomer WHERE email='$email'");
+//if(mysqli_num_rows($checkemail) > 0){
+    //header("Location: registration.php"); 
+//}else{
+     
  
-    $checkuser = mysqli_query("SELECT username FROM tbllregister WHERE username='$username'");
-
-    if(mysqli_num_rows($check) > 0){
-                header("Location: registration.php");  
-            }    
-            else{
-            $sql="INSERT INTO tbllregister(name,email,username,password,gender,mobileno) 
-            VALUES('$name','$email','$username','$password','$gender','$mobileno')";
+  //$checkuser = mysqli_query("SELECT username FROM tbllogin WHERE username='$username'");
+//
+  //if(mysqli_num_rows($check) > 0){
+      //header("Location: registration.php");  
+           // }    
+          // else{
+          $sql="INSERT INTO tblcustomer(name,email,gender,mobileno)
+                VALUES('$name', '$email','$gender','$mobilen'); ". 
+                "INSERT INTO tbllogin (username, password) 
+                VALUES('$username', '$password') ";
+    
+            $result = mysqli_multi_query($conn, $sql);
+            //$result=$conn->query($sql.$sql2);
+if(!$result){ 
+    echo "fail" . die (mysqli_error($conn));
+}else{
             header("Location: index.php"); 
-            }  
-    }
-   }  
+              
+   }
+           }
+    
+  // }}
 
-mysqli_close();
+          
+//mysqli_close();
     
 ?>

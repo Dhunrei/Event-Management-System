@@ -22,37 +22,37 @@
     
       <div id="content">
  <div  class="form">
-    
+                   <h1>Customer Registration</h1>
             <form id="reg" action="reg.php" method="post" >
           
-                <h1>Customer Registration</h1>
+ 
                 <p class="contact"><label for="name">Name</label></p>
 
-                <input id="name" name="name" placeholder="First and last name" required tabindex="1" type="text" />
+                <input id="name" name="nm" placeholder="First and last name" required tabindex="1" type="text" />
                 
                 <p class="contact"><label for="emaill">Email</label></p>
 
-                <input id="email" name="email" placeholder="example@domain.com" required type="email" />
+                <input id="email" name="el" placeholder="example@domain.com" required type="email" />
 
 
                 <p class="contact"><label for="usernamee">Create a username</label></p>
 
-                <input id="username" name="username" placeholder="username" required tabindex="2" type="text" />
+                <input id="username" name="un" placeholder="username" required tabindex="2" type="text" />
 
  
                 <p class="contact"><label for="passwordd">Create a password</label></p>
 
-                <input type="password" id="password" name="password" required type="text" />
+                <input type="password" id="password" name="ps" required type="text" />
 
                 <p class="contact"><label for="repassword">Confirm your password</label></p>
 
-                <input type="password" id="password" name="repassword" required type="text" />
+                <input type="password" id="password" name="rp" required type="text" />
                 <br>
 
  
                 <label>Select Gender:</label>
                 
-            <select class="select-style gender" name="gender">
+            <select class="select-style gender" name="gr">
  
             <option value="">I Am..</option>
  
@@ -65,7 +65,7 @@
  
             <p class="contact"><label for="phone">Mobile phone</label></p>
 
-            <input id="phone" name="phone" placeholder="phone number" required type="text"> <br>
+            <input id="phone" name="mb" placeholder="phone number" required type="text"> <br>
 
             <input class="buttom" name="submit" id="submit" tabindex="5" value="Sign me up!" type="submit" onclick="regg()" />   
               

@@ -24,20 +24,12 @@
           <li><a href="#">Logout</a></li>
 		</ul></nav>
       </div>
-      <?php
-    
-    if(isset($_SESSION['id'])){
-        echo "<br><br> Hello!~  ",$_SESSION['name'];
-        echo "<br><br> UserName:  ",$_SESSION['username'];
-        echo "<br><br> Email:  ", $_SESSION['email'];
-        echo "<br><br> Gender:  ",$_SESSION['gender'];
-        echo "<br><br> Phone No.:  ",$_SESSION['mobileno'];
-    }
-    
-    
-  
-    ?>
-      
+    <?php
+        if(isset($_SESSION['id_customer'])){
+        }  else{
+            echo "You are not Logged in!";
+        }
+        ?>
       <div id="content">    
         <div  class="form">
     
