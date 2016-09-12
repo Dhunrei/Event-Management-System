@@ -19,50 +19,28 @@ $password = $_POST['password'];
 $repassword = $_POST['repassword'];
 $gender = $_POST['gender'];
 $mobileno = $_POST['phone'];
+if(!$password == $repassword){
+    header("Location: registration.php"); 
+}else{
+$checkemail = mysqli_query("SELECT username FROM tbllregister WHERE email='$email'");
+    if(mysqli_num_rows($checkemail) > 0){
+        header("Location: registration.php"); 
+    }else{
+        
+ 
+    $checkuser = mysqli_query("SELECT username FROM tbllregister WHERE username='$username'");
 
-if(empty($name = $_POST['name'])){
-    echo "Insert name";
-}
-else{
-    
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo("$email is a valid email address");
-    } 
-    else {
-    
-        $checkuser = mysqli_query("SELECT username FROM tbllregister WHERE username='$username'");
-        $usercheck = mysqli_fetch_assoc($checkuser) or die .mysql_error();
-        if($_POST['username'] == $usercheck['username']){
-        echo "Invalid Username";
-        }
-        else{
-            if(empty($password)){
-                echo "Insert password";
-            }
-             if(empty($repassword)){
-                echo "Insert password";
-            }
-            
-            if(!$password == $repassword){
-                echo "Password did not match!";
-            }else{
-                if(empty($gender)){
-                    echo "Select Gender";
-                }else{
-                    if(empty($mobileno)){
-                        echo "Insert Mobile No.";
-                    }else{
-
-$sql="INSERT INTO tbllregister(name,email,username,password,gender,mobileno) 
-VALUES('$name','$email','$username','$password','$gender','$mobileno')";
-
-$result = $conn->query($sql);
-if(!$result){
-     echo "FAIL";
-}
+    if(mysqli_num_rows($check) > 0){
+                header("Location: registration.php");  
+            }    
             else{
-    header("Location: index.php");
-}}}}}}}
+            $sql="INSERT INTO tbllregister(name,email,username,password,gender,mobileno) 
+            VALUES('$name','$email','$username','$password','$gender','$mobileno')";
+            header("Location: index.php"); 
+            }  
+    }
+   }  
 
+mysqli_close();
     
 ?>

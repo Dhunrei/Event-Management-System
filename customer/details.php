@@ -24,6 +24,19 @@
           <li><a href="#">Logout</a></li>
 		</ul></nav>
       </div>
+      <?php
+    
+    if(isset($_SESSION['id'])){
+        echo "<br><br> Hello!~  ",$_SESSION['name'];
+        echo "<br><br> UserName:  ",$_SESSION['username'];
+        echo "<br><br> Email:  ", $_SESSION['email'];
+        echo "<br><br> Gender:  ",$_SESSION['gender'];
+        echo "<br><br> Phone No.:  ",$_SESSION['mobileno'];
+    }
+    
+    
+  
+    ?>
       
       <div id="content">    
         <div  class="form">
