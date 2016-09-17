@@ -14,7 +14,7 @@
           <li><a href="bookinghistory.php">Booking History</a></li>
           <li><a href="feedback.php">Feedback</a></li>
           <li class="active"><a href="view.php">View Venus</a></li>
-          <li><a href="log-out.php">Logout</a></li>
+          <li><a href="logout.php">Logout</a></li>
 		</ul></nav>
       </div>
     

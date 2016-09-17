@@ -3,10 +3,7 @@
     $conn = mysqli_connect("localhost", "root", "", "dbevent");
 
     $isValid = false;
-
-//    $email = 'user@gmsfail.com';
-//    $username = 'usedfr';
-    
+   
 
     $name=$_POST['nm'];
     $email=$_POST['el'];
@@ -25,7 +22,7 @@
     $result = mysqli_query($conn, $sqlqry);
     if (mysqli_num_rows($result) > 0) {
         echo "There's an existing username!";
-        header("Location: registration");
+        header("Location: registration.php");
     }else{
         
     
@@ -44,7 +41,9 @@
       echo 'Your Password is not the same';  
       header("Location: registration.php");    
     }
+        
     else{
+          $password = $_POST['ps'];
 
         $sql="INSERT INTO tblcustomer(name,email,gender,mobileno)
         VALUES('$name', '$email','$gender','$mobilen'); ". 
@@ -57,8 +56,8 @@
             echo "fail" . die (mysqli_error($conn));
         } else{
             echo 'z';
-            
-//            header("Location: login.php"); 
+           
+            header("Location: login.php"); 
         } 
     }
     }
