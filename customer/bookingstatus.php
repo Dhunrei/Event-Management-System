@@ -1,3 +1,7 @@
+<?php
+
+include 'bookstatus.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,7 +23,20 @@
       </div>
     
       <div id="content">    
-  
+  <table border="2" width="600">
+        <tr>
+             <th>ID</th>
+            <th>Event Type</th>
+             <th>Event Place</th>
+             <th>No. of Guest</th>
+             <th>Event Date</th>
+             <th>Status</th>
+        </tr> 
+      <?php
+      zxc();
+      ?>
+      
+    </table>
           
           
           
