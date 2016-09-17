@@ -21,12 +21,12 @@
       <div id="content">    
         <div  class="form">
     
-            <form id="contactform">
+            <form id="contactform" action="bookings.php" method="post">
           
                 <h1>Book Events</h1>
-                <p class="contact"><label for="name">Event Type</label></p>
+                <p class="contact"><label for="type">Event Type</label></p>
                
-                <select>
+                <select name="type">
                     <option>-Select-</option>
                     <option>Marriage</option>
                     <option>Birthday Party</option>
@@ -36,22 +36,22 @@
                 </select>
                 <br>
                 <br>
-                <p class="contact"><label for="email">Event Place</label></p>
+                <p class="contact"><label for="ep">Event Place</label></p>
                 
-                <input id="eventplace" name="eventplace" required="" type="text">
+                <input id="eventplace" name="ep" required="" type="text">
 
 
                 <p class="contact"><label for="guest">No Of Guest</label></p>
 
-                <input id="noguest" name="noguest" required="" tabindex="2" type="text">
+                <input id="noguest" name="guest" required="" tabindex="2" type="text">
 
  
-                <p class="contact"><label for="Date">Date</label></p>
+                <p class="contact"><label for="date">Date</label></p>
 
                 <input type="date" name="date"/>
                 
                 <br>
-            <input class="buttom" name="submit" id="submit" tabindex="5" value="Search Date if available!" type="submit">
+          
                 
                  <br>
                 <input type="submit" name="okay" id="okay" tabindex="5" value="Submit" class="buttom" >
