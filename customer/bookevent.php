@@ -48,10 +48,20 @@
  
                 <p class="contact"><label for="Date">Date</label></p>
 
-                <input id="date" name="date" required="" type="text">
- 
-
-            <input class="buttom" name="submit" id="submit" tabindex="5" value="Submit!" type="submit">   
+                <input type="date" name="date"/>
+                
+                <br>
+            <input class="buttom" name="submit" id="submit" tabindex="5" value="Search Date if available!" type="submit">
+                
+                 <br>
+                <input type="submit" name="okay" id="okay" tabindex="5" value="Submit" class="buttom" >
+                
+                
+                
+                
+                
+        
+         
               
    </form>
 

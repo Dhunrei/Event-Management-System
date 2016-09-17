@@ -64,8 +64,8 @@ a:hover, a:active{
 }
 
 #content{
-    width: 1366px;
-    height: 630px;
+   width: 1366px;
+    height: 768px;
     background-color: #f1f1f1;
 }
 #footer{
@@ -83,9 +83,8 @@ a:hover, a:active{
 .form{
 
     background:#f1f1f1;
-    width:470px;
-    margin-left:500px; 
-    padding-left:50px; 
+   margin-left: 50px;
+    padding-left: 20px;
     padding-top:20px;
     
 
