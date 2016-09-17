@@ -7,12 +7,17 @@ include 'dbcon.php';
     $sql = "SELECT * FROM tbllogin,tblcustomer WHERE username='$userid' AND password='$pwd'";
     $result = $conn->query($sql);
     
-if(!$row = mysqli_fetch_assoc($result)){
+if(!$row = $result -> fetch_assoc()){
         header("Location: login.php");
     }else{
-        $_SESSION['id'] = $row['id'];
-        $_SESSION['username'];
-    
+        $_SESSION['id_customer'] = $row['id_customer'];
+        $_SESSION['username'] = $row['username'];
+    $_SESSION['name'] = $row['name'];
+    $_SESSION['email'] = $row['email'];
+    $_SESSION['gender'] = $row['gender'];
+    $_SESSION['mobileno'] = $row['mobileno'];
+        
+   
         header("Location: ./customer/details.php");
         
     }

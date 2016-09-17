@@ -26,6 +26,12 @@
       </div>
     <?php
         if(isset($_SESSION['id_customer'])){
+            
+            echo 'Hi! ',$_SESSION['name'];
+            echo '<br />email: ',$_SESSION['email'];
+            echo '<br />gender: ',$_SESSION['gender'];
+            echo '<br />Mobile No.: ',$_SESSION['mobileno'];
+         
         }  else{
             echo "You are not Logged in!";
         }
