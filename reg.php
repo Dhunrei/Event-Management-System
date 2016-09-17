@@ -38,19 +38,21 @@ else{
           // else{
     
     
-    $sql =  "SELECT username FROM tblcustomer WHERE email='$email'"
-        $sql .= "SELECT username FROM tbllogin WHERE username='$username'"
-        if(mysqli_multi_query($conn, $sql)){
-            $ress = mysqli_fetch_assoc($sql)
+    $sql =  "SELECT a.username, b.email FROM tblcustomer b,tbllogin a WHERE email='$email' AND username='$username'"
+      
+        if(mysqli_query($conn, $sql)){
+            $ress = mysqli_fetch_assoc($sql);
                                     
         }
-    if($_SESSION['email'] == $email){
+    do
+            
+        if($_SESSION['email'] == $email){
         echo "invaliv Email";
-    }
-    if($_SESSION['username'] == $username){
-        echo "Invalid Username";
-    }else{
-        
+        }
+        if($_SESSION['username'] == $username){
+            echo "Invalid Username";
+        }else{
+
         
         
           $sqli="INSERT INTO tblcustomer(name,email,gender,mobileno)
@@ -58,12 +60,12 @@ else{
                 "INSERT INTO tbllogin (username, password) 
                 VALUES('$username', '$password') ";
     
-            $result = mysqli_query($conn, $sqli);
+            $result = mysqli_multi_query($conn, $sqli);
             //$result=$conn->query($sql.$sql2);
-if(!$result){ 
-    echo "fail" . die (mysqli_error($conn));
-}else{
-            header("Location: index.php");
+            if(!$result){ 
+                echo "fail" . die (mysqli_error($conn));
+            }else{
+                        header("Location: login.php");
               
    }
     }
