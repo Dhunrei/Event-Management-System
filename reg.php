@@ -34,21 +34,39 @@ else{
 //
   //if(mysqli_num_rows($check) > 0){
       //header("Location: registration.php");  
-           // }    
+           // }  
           // else{
-          $sql="INSERT INTO tblcustomer(name,email,gender,mobileno)
+    
+    
+    $sql =  "SELECT username FROM tblcustomer WHERE email='$email'"
+        $sql .= "SELECT username FROM tbllogin WHERE username='$username'"
+        if(mysqli_multi_query($conn, $sql)){
+            $ress = mysqli_fetch_assoc($sql)
+                                    
+        }
+    if($_SESSION['email'] == $email){
+        echo "invaliv Email";
+    }
+    if($_SESSION['username'] == $username){
+        echo "Invalid Username";
+    }else{
+        
+        
+        
+          $sqli="INSERT INTO tblcustomer(name,email,gender,mobileno)
                 VALUES('$name', '$email','$gender','$mobilen'); ". 
                 "INSERT INTO tbllogin (username, password) 
                 VALUES('$username', '$password') ";
     
-            $result = mysqli_multi_query($conn, $sql);
+            $result = mysqli_query($conn, $sqli);
             //$result=$conn->query($sql.$sql2);
 if(!$result){ 
     echo "fail" . die (mysqli_error($conn));
 }else{
-            header("Location: index.php"); 
+            header("Location: index.php");
               
    }
+    }
            }
     
   // }}
