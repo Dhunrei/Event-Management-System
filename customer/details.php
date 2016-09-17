@@ -24,7 +24,12 @@
           <li><a href="#">Logout</a></li>
 		</ul></nav>
       </div>
-      
+    <?php
+        if(isset($_SESSION['id_customer'])){
+        }  else{
+            echo "You are not Logged in!";
+        }
+        ?>
       <div id="content">    
         <div  class="form">
     
