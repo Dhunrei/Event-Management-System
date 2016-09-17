@@ -14,15 +14,20 @@ $date = $_POST['date'];
  if(isset($_SESSION['id_customer'])){
 
      echo $date;
-     $_SESSION['username'];
-     $_SESSION['name'];
-     $_SESSION['email'];
-     $_SESSION['gender'];
-     $_SESSION['mobileno'];
+   
      
-//$sql = "INSERT INTO tblbookings(type,place,no_of_guest,date)";     
+$sql = "INSERT INTO tblbookings(type,(place,no_of_guest,date)
+VALUE('$type','$place','$noguest','$date')"; 
      
+     $result = mysqli_query($sql);
      
+     if(!$result){
+         echo "fail".die (mysqli_error($conn));
+     }else{
+         echo "ye";
+         
+         header("Location: ../../login.php");
+     }
      
      
      
