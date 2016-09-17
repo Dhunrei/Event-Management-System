@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,7 +22,7 @@
       <div id="content">
  <div  class="form">
                    <h1>Customer Registration</h1>
-            <form id="reg" action="try.php" method="post" >
+            <form id="reg" action="reg.php" method="post" >
           
  
                 <p class="contact"><label for="name">Name</label></p>
