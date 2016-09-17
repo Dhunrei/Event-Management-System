@@ -29,7 +29,7 @@
             <input type="text" name="username" placeholder="username" required="username"  >
             
              <p><label>Password:</label></p>
-            <input type="text" name="password" placeholder="password" required="password" >
+            <input type="password" name="password" placeholder="password" required="password" >
             
             <br>
             <input type="submit" value="Login"/>

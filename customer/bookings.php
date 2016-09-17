@@ -11,33 +11,21 @@ $date = $_POST['date'];
 
 
 
- if(isset($_SESSION['id_customer'])){
-
-     echo $date;
-   
+ if(isset($_SESSION['id_customer'])){    
+     $id=$_SESSION['id_customer'];
+$sql = "INSERT INTO tblbookings(type,place,no_of_guest,date,status,id_customer)
+VALUE('$type','$place','$noguest','$date','PENDING','$id') "; 
      
-$sql = "INSERT INTO tblbookings(type,(place,no_of_guest,date)
-VALUE('$type','$place','$noguest','$date')"; 
-     
-     $result = mysqli_query($sql);
+     $result = mysqli_query($conn, $sql);
      
      if(!$result){
          echo "fail".die (mysqli_error($conn));
      }else{
          echo "ye";
          
-         header("Location: ../../login.php");
+      
      }
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
+    
  }
 
 ?>
