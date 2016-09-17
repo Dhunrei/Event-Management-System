@@ -2,10 +2,10 @@
     session_start();
     $conn = mysqli_connect("localhost", "root", "", "dbevent");
 
-    $email = 'asdasd@gmail.com';
-    $username = 'user';
+    $isValid = false;
 
-
+    $email = 'user@gmsfail.com';
+    $username = 'usedfr';
     
     /*
     $name=$_POST['nm'];
@@ -20,71 +20,43 @@
 
 
 
-
-    $sqlqry = "SELECT * FROM tblcustomer c, tbllogin l WHERE l.username='$username' OR c.email='$email'";
+    // check if username already exists
+    $sqlqry = "SELECT * FROM tbllogin WHERE username='$username'";
     $result = mysqli_query($conn, $sqlqry);
     if (mysqli_num_rows($result) > 0) {
-        echo 'yee';
+        echo "There's an existing username!";
     }
 
-    //$usernamecheck= mysqli_query("SELECT * username FROM tbllogin WHERE username='$username' AND //email='$email'");
-    //$userchecker = mysqli_fetch_assoc($usernamecheck);
-    //if($_POST['un'] == $userchecker['username']){
-    //echo 'your name is taken' ;
-    //}
-
-    //else{
-    //	$query="INSERT INTO tbllogin(username) VALUES ('$username')";
-    //     $result = mysqli_multi_query($conn, $query);
-    //}
-    //if($_POST['el'] == $userchecker['email']){
-    //    echo 'your email is taken';
-    //}
-    //else{
-    //    $qry="INSERT INTO tbllogin(username) VALUES ('$email')";
-    //     $result = mysqli_multi_query($conn, $qry);
-    //}
+    // check if email already exists
+    $sqlqry = "SELECT * FROM tblcustomer WHERE email='$email'";
+    $result = mysqli_query($conn, $sqlqry);
+    if (mysqli_num_rows($result) > 0) {
+        echo "There's an existing email!";
+    }
 
     
-    /*
+
     if($password= $_POST['ps'] != $repassword=$_POST['rp']){
       echo 'Your Password is not the same';  
     }
-    else{  	
+    else{
 
-        $sqs = $conn -> query($sqli);
-        $row = $sql -> fetch_assoc();
-        $_SESSION['email'] = $row['email'];
-        $_SESSION['username'] = $row['username'];
+        $sql="INSERT INTO tblcustomer(name,email,gender,mobileno)
+        VALUES('$name', '$email','$gender','$mobilen'); ". 
+        "INSERT INTO tbllogin (username, password) 
+        VALUES('$username', '$password') ";
 
-        if($email=$_POST['el'] == $_SESSION['email']){
-                echo 'your email is taken';
-        }
+        $result = mysqli_multi_query($conn, $sql);
 
-        if($username=$_POST['un'] == $_SESSION['username']){
-            echo 'username is taken';
+        if(!$result){ 
+            echo "fail" . die (mysqli_error($conn));
+        } else{
+            echo 'z';
+            session_unset();
+            //  header("Location: login.php"); 
         } 
-
-        else {
-            $sql="INSERT INTO tblcustomer(name,email,gender,mobileno)
-            VALUES('$name', '$email','$gender','$mobilen'); ". 
-            "INSERT INTO tbllogin (username, password) 
-            VALUES('$username', '$password') ";
-
-            $result = mysqli_multi_query($conn, $sql);
-
-            if(!$result){ 
-                echo "fail" . die (mysqli_error($conn));
-            } else{
-                echo 'z';
-                session_unset();
-                //  header("Location: login.php"); 
-            }       
-        }
+    }
         
-        
-    } */
-    
 ?>
 
  <script>
