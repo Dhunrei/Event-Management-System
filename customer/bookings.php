@@ -21,7 +21,7 @@ VALUE('$type','$place','$noguest','$date','PENDING','$id') ";
      if(!$result){
          echo "fail".die (mysqli_error($conn));
      }else{
-         echo "ye";
+         header("Location: bookevent.php");
          
       
      }
