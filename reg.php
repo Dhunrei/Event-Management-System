@@ -4,10 +4,10 @@
 
     $isValid = false;
 
-    $email = 'user@gmsfail.com';
-    $username = 'usedfr';
+//    $email = 'user@gmsfail.com';
+//    $username = 'usedfr';
     
-    /*
+
     $name=$_POST['nm'];
     $email=$_POST['el'];
     $username=$_POST['un'];
@@ -15,7 +15,7 @@
     $repassword=$_POST['rp'];
     $gender=$_POST['gr'];
     $mobilen=$_POST['mb'];
-    */
+    
 
 
 
