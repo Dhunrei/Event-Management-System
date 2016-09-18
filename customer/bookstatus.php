@@ -8,24 +8,27 @@ if(isset($_SESSION['id_customer'])){
     if(!$result){ 
             echo "fail" . die (mysqli_error($conn));
         } else{
-        function zxc(){
+      
         
-           while($row = $result -> fetch_assoc()){
-            $_SESSION['id_book'] = $row['id_book'];
-             $_SESSION['type'] = $row['type'];
-             $_SESSION['place'] = $row['place'];
-             $_SESSION['no_of_guest'] = $row['no_of_guest'];
-             $_SESSION['date'] = $row['date'];
-             $_SESSION['status'] = $row['status'];
+           while($row = mysqli_fetch_assoc($result)){
+             
+         
+             $id = $row['book_id'];
+             $type = $row['type'];
+             $place = $row['place'];
+             $guest = $row['no_of_guest'];
+             $date = $row['date'];
+             $status = $row['status'];
+               $name = $row['name'];
             
             echo "
             <tr>
-<td>$_SESSION['id_book']</td>
-<td>$_SESSION['type']</td>
-<td>$_SESSION['place']</td>
-<td>$_SESSION['no_of_guest']</td>
-<td>$_SESSION['date']</td>
-<td>$_SESSION['status']</td>
+                <td>$id </td>
+                <td>$type</td>
+                <td>$place</td>
+                <td>$guest</td>
+                <td>$date</td>
+                <td>$status</td>
             </tr>
             ";
 //      while($row=mysqli_fetch_array($result,MYSQLI_NUM)){
@@ -45,7 +48,7 @@ if(isset($_SESSION['id_customer'])){
 //             <td>$date</td>
 //             <td>$status</td>
 //            </tr>";  
-//          }
+       
               
               
           }

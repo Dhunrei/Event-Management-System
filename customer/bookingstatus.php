@@ -1,7 +1,4 @@
-<?php
 
-include 'bookstatus.php';
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -33,9 +30,11 @@ include 'bookstatus.php';
              <th>Status</th>
         </tr> 
       <?php
-      zxc();
-      ?>
-      
+
+        include 'bookstatus.php';
+       ?>
+
+
     </table>
           
           
