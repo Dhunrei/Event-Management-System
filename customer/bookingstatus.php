@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html>
@@ -19,18 +20,25 @@
 		</ul></nav>
       </div>
     
-      <div id="content">    
-  <table border="2" width="600">
-        <tr>
-             <th>ID</th>
-            <th>Event Type</th>
-             <th>Event Place</th>
-             <th>No. of Guest</th>
-             <th>Event Date</th>
-             <th>Status</th>
-        </tr> 
-      <?php
+      <div id="content">   
+          <table border="2" width="600">
+          <?php
+          if(isset($_SESSION['id_customer'])){
+                echo "Hi! ",$_SESSION['name'];
+           
 
+          echo  "
+            
+            <tr>
+            <th>ID</th>
+            <th>Event Type</th>
+            <th>Event Place</th>
+            <th>No. of Guest</th>
+            <th>Event Date</th>
+            <th>Status</th>
+            </tr> ";
+               }  
+     
         include 'bookstatus.php';
        ?>
 

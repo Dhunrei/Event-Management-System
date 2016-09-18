@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include 'dbcon.php';
 if(isset($_SESSION['id_customer'])){
     $rp = $_SESSION['id_customer'];
@@ -11,7 +11,7 @@ if(isset($_SESSION['id_customer'])){
       
         
            while($row = mysqli_fetch_assoc($result)){
-             
+           
          
              $id = $row['book_id'];
              $type = $row['type'];
